@@ -1,9 +1,20 @@
 import React from 'react'
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import About from './components/About';
 
-const App = () => {
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/about" element={<About />} />
+  )
+);
+
+export default function App() {
   return (
-    <div className='bg-red-500 text-white p-4'>App</div>
+    <RouterProvider router={router} />
   )
 }
-
-export default App
